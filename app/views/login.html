@@ -1,1 +1,29 @@
-<div ng-click="go()" ng-controller="loginCtrl">12345</div>
+<div class="lxm_wrapper" ng-controller="loginCtrl">
+	<lxm>
+		<!--<p>aaaa</p>-->
+		<p class="lxm_title">学生管理系统</p>
+		<div class="lxm_login">
+			<span class="teacher button button-rounded button-flat-primary button-large">老师登录</span>
+			<span class="student button button-rounded button-flat-primary button-large">学生登录</span>
+		</div>
+		<div class="lxm_main">
+			<div class="lxm_main_wrapper">
+				<div class="lxm_main_cen">
+					<p>登录<i class="glyphicon glyphicon-remove"></i></p>
+					<div class="lxm_login_input"><span></span><input type="text" placeholder="username" class="lxm_user" title="请输入名字" /></div>
+					<div class="lxm_login_input"><span></span><input type="password" placeholder="password" class="lxm_pass" title="请输入密码" /></div>
+					<div class="yzm_pic" id="v_container" style="width: 100px;height: 50px;"></div>
+					<input class="yzm" type="text" title="请输入验证码" placeholder="请输入验证码" />
+					<a class="lxm_sub button button-rounded button-flat-primary button-large">GO</a>
+				</div>
+				<div class="lxm_main_back">
+					<i class="my_ok"></i>
+					<i class="glyphicon glyphicon-remove my_erro"></i>
+					<div class="spinner"><i></i></div>
+					<p>正在认证……</p>
+					<span class="button button-rounded button-highlight onload">重试</span>
+				</div>
+			</div>
+		</div>
+	</lxm>
+</div>
