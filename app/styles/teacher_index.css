@@ -1,0 +1,37 @@
+.rjx_teachermain{
+	width: 100%;
+	height: 100vh;
+	background: url(../images/background.jpg) no-repeat 100% 100%;
+}
+.rjx_teacher{
+	width: 1000px;
+	height: 600px;
+	background: red;
+	margin: auto;
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+}
+.rjx_nav{
+	width: 200px;
+	height: 100%;
+	background: yellow;
+	float: left;
+}
+.rjx_nav>li{
+	width: 150px;
+	height: 50px;
+	background: red;
+	margin: 20px;
+}
+.rjx_nav>li>a{
+	display: block;
+	font-size: 20px;
+	text-align: center;
+	line-height: 50px;
+	width: 100%;
+	height: 100%;
+	text-decoration: none;
+}
