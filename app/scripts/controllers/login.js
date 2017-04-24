@@ -14,10 +14,12 @@ angular.module('schoolSystemApp').controller('loginCtrl',['$scope','$http','$sta
 //	alert(1)
 	
 	
-}]).directive("lxm", function($http) {
+}]).directive("lxm", function($http,$state) {
 	return {
 		restrict: "ECMA",
 		link: function($scope, element, attr) {
+			
+			
 			var verifyCode = new GVerify("v_container");
 //			layer.alert('内容', {
 //			  icon: 1,
@@ -34,18 +36,21 @@ angular.module('schoolSystemApp').controller('loginCtrl',['$scope','$http','$sta
 			$('.teacher').bind('click',function(){
 //				$('.lxm_main').css('opacity','1')
 //				$('.lxm_main').css('z-index','2')
+				$('.lxm_sub').addClass('lxm_teacher_clk')
 				$('.lxm_login_wrapper').css('transform','translateX(4%)')
 			})
 			
 			$('.student').bind('click',function(){
 //				$('.lxm_main').css('opacity','1')
 //				$('.lxm_main').css('z-index','2')
+				$('.lxm_sub').addClass('lxm_student_clk')
 				$('.lxm_login_wrapper').css('transform','translateX(4%)')
 			})
 			
 			$('.lxm_main_cen p i').bind('click',function(){
 //				$('.lxm_main').css('z-index','-2')
 //				$('.lxm_main').css('opacity','0')
+				$('.lxm_sub').removeClass('lxm_student_clk lxm_teacher_clk')
 				$('.lxm_login_wrapper').css('transform','translateX(-34%)')
 			})
 			
@@ -57,7 +62,7 @@ angular.module('schoolSystemApp').controller('loginCtrl',['$scope','$http','$sta
 				})
 				$(name).blur(function(){
 					$(this).css('width','100%');
-					$(this).siblings('span').css('width','0')
+					$(this).siblings('span').css('width','0');
 					$(this).parent().css('border','1px #dddddd solid')
 				})
 			}
@@ -70,7 +75,15 @@ angular.module('schoolSystemApp').controller('loginCtrl',['$scope','$http','$sta
 				$(this).css('border','1px #dddddd solid')
 			})
 			
-			$('.lxm_sub').bind('click',function(){
+			
+			
+//			console.log(ip)
+			doger_click('.lxm_teacher_clk',''+ip+'login/teachers','teacher_index')
+			doger_click('.lxm_student_clk',''+ip+'login/students','student_index')
+			function doger_click(myclass,myurl,html){
+			$('body').delegate(myclass,'click',function(){	
+//			$(myclass).bind('click',function(){
+//				alert(1)
 				var res = verifyCode.validate($('.yzm').val());
 				if($('.lxm_user').val() == ''){
 //					layer.alert('请输入用户名', {icon: 6},title: '你好，layer。');
@@ -86,32 +99,64 @@ angular.module('schoolSystemApp').controller('loginCtrl',['$scope','$http','$sta
 						layer.msg('验证码输入错误');
 //						layer.alert('验证码输入错误',{title:'提示'});
 					}else{
+//						console.log($('.lxm_user').val())
+//						console.log($('.lxm_pass').val())
+						$('.lxm_main_wrapper').css('transform','rotateY(180deg)')
 						setTimeout(function(){
 							$('.lxm_user').val('')
 							$('.lxm_pass').val('')
 							$('.yzm').val('')
 						},500)
-						$('.lxm_main_wrapper').css('transform','rotateY(180deg)')
-						setTimeout(function(){
-							//success
-//							$('.lxm_main_back').css('background','#8BC34A')
-//							$('.lxm_main_back p').text('欢迎回来!')
-//							$('.my_ok').css('display','block')
-//							$('.spinner').css('display','none')
-
-							//erro
-//							$('.lxm_main_back').css('background','red')
-//							$('.lxm_main_back p').text('用户名或密码错误%>_<%')
-//							$('.my_erro').css('display','block')
-//							$('.spinner').css('display','none')
-//							$('.onload').css('display','block')
-						},2000)
+						$.ajax({
+							type:'post',
+							url: myurl,
+							async:false,
+							data:{
+								username:$('.lxm_user').val(),
+								password:$('.lxm_pass').val()
+							},
+							success:function(e){
+								console.log(e)
+								if(e.result){
+									sessionStorage.id = e.result[0].id
+								}
+								if(e.flag ==1){
+									setTimeout(function(){
+										$('.lxm_main_back').css('background','#8BC34A')
+										$('.lxm_main_back p').text('欢迎回来!')
+										$('.my_ok').css('display','block')
+										$('.spinner').css('display','none')
+										$('.onload').css('display','none')
+										$('.my_erro').css('display','none')
+										setTimeout(function(){
+//											location.href = "#!/student_index.html"
+											$state.go(html);
+										},1000)
+									},2000)
+								}
+								else if(e.flag == 2 || 3 || 4){
+									setTimeout(function(){
+										$('.lxm_main_back').css('background','red')
+										$('.lxm_main_back p').text('用户名或密码错误%>_<%')
+										$('.my_erro').css('display','block')
+										$('.spinner').css('display','none')
+										$('.onload').css('display','block')
+									},2000)
+								}
+							}
+						})
 					}
 				}
 			})
+			} 
 			
 			$('.onload').bind('click',function(){
-				$('.lxm_main_wrapper').css('transform','translate(-50%,-50%) rotateY(0)')
+				$('.lxm_main_wrapper').css('transform','rotateY(0)')
+				$('.spinner').css('display','block')
+				$('.lxm_main_back').css('background','#222')
+				$('.my_erro').css('display','none')
+				$('.onload').css('display','none')
+				$('.lxm_main_back p').text('正在认证……')
 			})
 			
 		}

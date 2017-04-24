@@ -10,7 +10,7 @@
 			</div>
 			<div class="lxm_main_wrapper">
 				<div class="lxm_main_cen">
-					<p>登录<i class="glyphicon glyphicon-remove"></i></p>
+					<p>登录<i class="glyphicon glyphicon-remove lxm_close"></i></p>
 					<div class="lxm_login_input"><span></span><input type="text" placeholder="username" class="lxm_user" title="请输入名字" /></div>
 					<div class="lxm_login_input"><span></span><input type="password" placeholder="password" class="lxm_pass" title="请输入密码" /></div>
 					<div class="yzm_pic" id="v_container" style="width: 100px;height: 50px;"></div>
@@ -27,6 +27,21 @@
 			</div>
 		</div>
 		</div>
+		<!--<script type="text/javascript">
+			
+			$.ajax({
+				type:'post',
+				url:'http://192.168.43.204:8888/login/students',
+				async:true,
+				data:{
+					username:'160401',
+					password:'000000'
+				},
+				success:function(e){
+					console.log(e)
+				}
+			})
+		</script>-->
 		<!--<div class="lxm_main">
 			<div class="lxm_main_wrapper">
 				<div class="lxm_main_cen">
