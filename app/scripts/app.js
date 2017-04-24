@@ -17,7 +17,7 @@ angular
   		 		url:"/login",
 				templateUrl:"views/login.html"
 			})
-			$urlRouterProvider.when("", "/login");
+			
 			$stateProvider.state("teacher_index",{
 					url:"/teacher_index",
 					templateUrl:"views/teacher_index.html"
@@ -36,6 +36,6 @@ angular
 					}
 			})
 			
-			
+			$urlRouterProvider.when("", "/student_index");
 			
   }])

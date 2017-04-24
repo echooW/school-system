@@ -1,4 +1,236 @@
-<div ng-controller="student_indexCtrl">
+<div class="student_index_bg" ng-controller="student_indexCtrl">
+	<lxm_student>
+	<div class="lxm_index_wrapper">
+		<div class="lxm_index_wrapper_left">
+			<p>我的信息</p>
+			<div class="lxm_msg">
+				<p><i class="glyphicon glyphicon-user"></i>姓名:<span>李小明</span></p>
+				<p><i class="glyphicon glyphicon-tag"></i>性别:<span>男</span></p>
+				<p><i class="glyphicon glyphicon-earphone"></i>电话:<span>13103492829</span></p>
+				<p><i class="glyphicon glyphicon-home"></i>班级:<span>1604A</span></p>
+			</div>
+			<span class="button button-rounded button-flat-action">学生守则</span>
+			<span class="button button-rounded button-flat-highlight lxm_look_all">查看全部</span>
+			<span class="button button-rounded button-flat-caution">修改密码</span>
+			<span class="button button-rounded button-flat-primary button-large">退出登录</span>
+		</div>
+		<div class="lxm_index_wrapper_right">
+			<div class="lxm_right_top">
+				<p>学生列表</p>
+			</div>
+			<table class="table table-hover lxm_table">
+				<thead>
+			    	<th>姓名</th>
+			    	<th>班级</th>
+			    	<th>性别</th>
+			    	<th>手机号</th>
+			    	<th>宿舍号</th>
+				</thead>
+				<tbody>
+			    	<tr>
+			    		<td>李小明</td>
+			    		<td>1604a</td>
+			    		<td>男</td>
+			    		<td>13103491829</td>
+			    		<td>619</td>
+			     	</tr>
+			 		<tr>
+			        	<td>李小明</td>
+			    		<td>1604a</td>
+			    		<td>男</td>
+			    		<td>13103491829</td>
+			    		<td>619</td>
+			     	</tr>
+			 		<tr>
+			        	<td>李小明</td>
+			    		<td>1604a</td>
+			    		<td>男</td>
+			    		<td>13103491829</td>
+			    		<td>619</td>
+			    	</tr>
+			    	<tr>
+			    		<td>李小明</td>
+			    		<td>1604a</td>
+			    		<td>男</td>
+			    		<td>13103491829</td>
+			    		<td>619</td>
+			     	</tr>
+			 		<tr>
+			        	<td>李小明</td>
+			    		<td>1604a</td>
+			    		<td>男</td>
+			    		<td>13103491829</td>
+			    		<td>619</td>
+			     	</tr>
+			 		<tr>
+			        	<td>李小明</td>
+			    		<td>1604a</td>
+			    		<td>男</td>
+			    		<td>13103491829</td>
+			    		<td>619</td>
+			    	</tr>
+			    	<tr>
+			        	<td>李小明</td>
+			    		<td>1604a</td>
+			    		<td>男</td>
+			    		<td>13103491829</td>
+			    		<td>619</td>
+			    	</tr>
+				</tbody>
+			</table>
+			<div class="lxm_all_msg">
+				<div class="tcdPageCode"></div>
+			</div>
+		</div>
+	</div>
+	<!--详细信息-->
+	<div class="lxm_student_more">
+		<div class="lxm_more_con">
+			<div class="lxm_more_mes">
+				<ul>
+					<li>姓名:<span>李小明</span></li>
+					<li>性别:<span>男</span></li>
+					<li>宿舍号:<span>619</span></li>
+					<li>出生年月:<span>1998/11/26</span></li>
+				</ul>
+				<ul>
+					<li>家长姓名:<span>XXXX</span></li>
+					<li>学生电话:<span>13834999673</span></li>
+					<li>家长电话:<span>13103491829</span></li>
+				</ul>
+				<ul>
+					<li>班主任:<span>XXXX</span></li>
+					<li>授课老师:<span>XXXX</span></li>
+					<li>班主任电话:<span>13103491829</span></li>
+				</ul>
+				<p class="lxm_map">家庭住址:<span>山西省朔州市应县东关村一号</span></p>
+				<ul>
+					<li>实训阶段:<span>实训三</span></span></li>
+					<li>综合分数:<span>100分</span></li>
+				</ul>
+				<span class="lxm_my_erro button button-rounded button-flat-caution">违纪详情</span>
+				<!--<p class="lxm_my_erro">违纪详情</p>-->
+			</div>
+			<div class="lxm_more_achievement">
+				<p>周考成绩</p>
+				<div class="lxm_detailed">
+					<ul>
+						<li>第一周</li>
+						<li>第二周</li>
+						<li>第三周</li>
+						<li>第四周</li>
+					</ul>
+					<ul>
+						<li>100</li>
+						<li>100</li>
+						<li>100</li>
+						<li>100</li>
+					</ul>
+				</div>
+			</div>
+			<i class="glyphicon glyphicon-remove lxm_student_erro_one"></i>
+		</div>
+	</div>
+	<!--违纪详情-->
+	<div class="lxm_discipline">
+		<p>违纪详情</p>
+		<table class="table table-hover lxm_table_two">
+				<thead>
+			    	<th>违纪时间</th>
+			    	<th>违纪扣分</th>
+			    	<th>违纪事件</th>
+				</thead>
+				<tbody>
+			    	<tr>
+			    		<td>2017/4/24</td>
+			    		<td>20分</td>
+			    		<td>上课喝水</td>
+			     	</tr>
+			 		<tr>
+			    		<td>2017/4/24</td>
+			    		<td>20分</td>
+			    		<td>上课喝水</td>
+			     	</tr>
+			 		<tr>
+			    		<td>2017/4/24</td>
+			    		<td>20分</td>
+			    		<td>上课喝水</td>
+			     	</tr>
+			    	<tr>
+			    		<td>2017/4/24</td>
+			    		<td>20分</td>
+			    		<td>上课喝水</td>
+			     	</tr>
+			 		<tr>
+			    		<td>2017/4/24</td>
+			    		<td>20分</td>
+			    		<td>上课喝水</td>
+			     	</tr>
+			 		<tr>
+			    		<td>2017/4/24</td>
+			    		<td>20分</td>
+			    		<td>上课喝水</td>
+			     	</tr>
+			    	<tr>
+			    		<td>2017/4/24</td>
+			    		<td>20分</td>
+			    		<td>上课喝水</td>
+			     	</tr>
+			     	<tr>
+			    		<td>2017/4/24</td>
+			    		<td>20分</td>
+			    		<td>上课喝水</td>
+			     	</tr>
+			     	<tr>
+			    		<td>2017/4/24</td>
+			    		<td>20分</td>
+			    		<td>上课喝水</td>
+			     	</tr>
+			     	<tr>
+			    		<td>2017/4/24</td>
+			    		<td>20分</td>
+			    		<td>上课喝水</td>
+			     	</tr><tr>
+			    		<td>2017/4/24</td>
+			    		<td>20分</td>
+			    		<td>上课喝水</td>
+			     	</tr>
+				</tbody>
+			</table>
+			<i class="glyphicon glyphicon-remove lxm_student_erro_two"></i>
+	</div>
+	<!--<div class="lxm_modify_password">
+		<div class="lxm_login_input"><span></span><input type="text" placeholder="username" class="lxm_user" title="请输入名字" /></div>
+		<div class="lxm_login_input"><span></span><input type="password" placeholder="password" class="lxm_pass" title="请输入密码" /></div>
+	</div>-->/
 	
-	
+	</lxm_student>
 </div>
+<script>
+	$(".tcdPageCode").createPage({
+        pageCount:3,
+        current:1,
+        backFn:function(p){
+            console.log(p);
+//          num = p*2-2
+//		    $.ajax({
+//				type:"get",
+//				url:"http://localhost:8888/item/find",
+//				data:{
+//					begin:num,
+//					num:2
+//				},
+//				async:true,
+//				success:function(e){
+//					console.log(e)
+//					$('.list').children().remove()
+//					var html = ''
+//					for(var i = 0; i < e[0].length; i++){
+//						html += '<ul class="cat"><li>'+e[0][i].username+'</li><li>'+e[0][i].phone+'</li><li><button class="del" id = '+e[0][i].id+'>删除</button><button class = "bianji" id = '+e[0][i].id+'>修改信息</button></li></ul>'
+//					}
+//					$('.list').append(html)
+//				}
+//			})
+        }
+    });
+</script>
