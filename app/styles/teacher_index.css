@@ -1,12 +1,13 @@
-.rjx_teachermain{
+.rjx_teacher_main{
 	width: 100%;
 	height: 100vh;
-	background: url(../images/background.jpg) no-repeat 100% 100%;
+	background: url(../images/bg-2.jpeg) no-repeat 100% 100%;
 }
 .rjx_teacher{
 	width: 1000px;
 	height: 600px;
-	background: red;
+	background: rgba(255,255,255,.4);
+	
 	margin: auto;
 	position: absolute;
 	left: 0;
@@ -17,7 +18,6 @@
 .rjx_nav{
 	width: 200px;
 	height: 100%;
-	background: yellow;
 	float: left;
 }
 .rjx_nav>li{
@@ -34,4 +34,60 @@
 	width: 100%;
 	height: 100%;
 	text-decoration: none;
+}
+.rjx_main{
+	width: 800px;
+	height: 100%;
+	float: left;
+}
+.rjx_main_left{
+	width: 50%;
+	height: 100%;
+	float: left;
+}
+.rjx_main_left_head{
+	width: 100%;
+	height: 100px;
+	text-align: center;
+	font-size: 40px;
+	line-height: 100px;
+}
+.rjx_main_left_content{
+	width: 100%;
+	height: 500px;
+	border-right: 2px dashed black;
+	background: yellow;
+}
+.rjx_main_left_content>p{
+	width: 90%;
+	margin-left: 5%;
+}
+.rjx_main_left_content>p>span:nth-child(1){
+	font-weight: bold;
+	font-size: 18px;
+}
+.rjx_main_right{
+	width: 50%;
+	height: 100%;
+	float: left;
+}
+.rjx_main_right_head{
+	width: 100%;
+	height: 100px;
+	text-align: center;
+	font-size: 40px;
+	line-height: 100px;
+}
+.rjx_main_right_content{
+	width: 100%;
+	height: 500px;
+	background: red;
+}
+.rjx_main_right_content>p{
+	width: 90%;
+	margin-left: 5%;
+}
+.rjx_main_right_content>p>span:nth-child(1){
+	font-weight: bold;
+	font-size: 18px;
 }

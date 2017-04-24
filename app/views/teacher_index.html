@@ -1,12 +1,30 @@
-<div ng-controller="teacher_indexCtrl" class="rjx_teachermain">
+<div ng-controller="teacher_indexCtrl" class="rjx_teacher_main">
 	<div class="rjx_teacher">
 		<ul class="rjx_nav">
-			<li><a href="">1604A</a></li>
-			<li><a href="">1604B</a></li>
-			<li><a href="">规则</a></li>
-			<li><a href="">退出登录</a></li>
+			<li><a ui-sref=".student_list">1604A</a></li>
+			<li><a ui-sref=".student_list">1604B</a></li>
+			<li><a ui-sref="teacher_index">规则</a></li>
+			<li><a href="#">退出登录</a></li>
 		</ul>
+		<div class="rjx_main" ui-view="content">
+			<div class="rjx_main_left">
+				<div class="rjx_main_left_head">教师守则</div>
+				<div class="rjx_main_left_content">
+					<p><span>第一条</span><br /><span>&#x3000;&#x3000;为了适应我系教学改革和发展的需要，加强师资队伍建设，增强全体教师的工作责任心，维护和稳定工商管理系的正常教学秩序，形成良好的教学作风，提高教学质量，使系教学及管理工作逐步实现科学化、规范化，特制定教师工作规范。</span></p>
+					<p><span>第二条</span><br /><span>&#x3000;&#x3000;教师必须忠诚教育事业，努力学习马列主义、毛泽东思想、邓小平理论和“三个代表”重要思想，贯彻执行党的教育方针，具有高尚师德、优良教风和敬业精神，具有严谨的科学态度和高度的责任心，教书育人，为人师表，遵纪守法。</span></p>
+					<p><span>第三条</span><br /><span>&#x3000;&#x3000;为了适应我系教学改革和发展的需要，加强师资队伍建设，增强全体教师的工作责任心，维护和稳定工商管理系的正常教学秩序，形成良好的教学作风，提高教学质量，使系教学及管理工作逐步实现科学化、规范化，特制定教师工作规范。</span></p>
+					<p><span>第四条</span><br /><span>&#x3000;&#x3000;教师必须忠诚教育事业，努力学习马列主义、毛泽东思想、邓小平理论和“三个代表”重要思想，贯彻执行党的教育方针，具有高尚师德、优良教风和敬业精神，具有严谨的科学态度和高度的责任心，教书育人，为人师表，遵纪守法。</span></p>
+				</div>
+			</div>
+			<div class="rjx_main_right">
+				<div class="rjx_main_right_head">学生守则</div>
+				<div class="rjx_main_right_content">
+					<p><span>第一条</span><br /><span>&#x3000;&#x3000;为了适应我系教学改革和发展的需要，加强师资队伍建设，增强全体教师的工作责任心，维护和稳定工商管理系的正常教学秩序，形成良好的教学作风，提高教学质量，使系教学及管理工作逐步实现科学化、规范化，特制定教师工作规范。</span></p>
+					<p><span>第二条</span><br /><span>&#x3000;&#x3000;教师必须忠诚教育事业，努力学习马列主义、毛泽东思想、邓小平理论和“三个代表”重要思想，贯彻执行党的教育方针，具有高尚师德、优良教风和敬业精神，具有严谨的科学态度和高度的责任心，教书育人，为人师表，遵纪守法。</span></p>
+					<p><span>第三条</span><br /><span>&#x3000;&#x3000;为了适应我系教学改革和发展的需要，加强师资队伍建设，增强全体教师的工作责任心，维护和稳定工商管理系的正常教学秩序，形成良好的教学作风，提高教学质量，使系教学及管理工作逐步实现科学化、规范化，特制定教师工作规范。</span></p>
+					<p><span>第四条</span><br /><span>&#x3000;&#x3000;教师必须忠诚教育事业，努力学习马列主义、毛泽东思想、邓小平理论和“三个代表”重要思想，贯彻执行党的教育方针，具有高尚师德、优良教风和敬业精神，具有严谨的科学态度和高度的责任心，教书育人，为人师表，遵纪守法。</span></p>
+				</div>
+			</div>
+		</div>
 	</div>
-	<!--<a ui-sref='.student_list' >5665455</a>
-	<div ui-view="content">9999999999</div>-->
 </div>

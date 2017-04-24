@@ -1,0 +1,43 @@
+.rjx_student{
+	width: 100%;
+	height: 100%;
+}
+.rjx_student_header{
+	width: 100%;
+	height: 60px;
+	background: red;
+	text-align: center;
+	font-size: 36px;
+	line-height: 60px;
+	letter-spacing: 5px;
+}
+.rjx_student_main{
+	width: 100%;
+	height: 100%;
+	background: aqua;
+}
+.rjx_student_main_header{
+	height: 60px;
+}
+.rjx_student_main_header>th{
+	width: 20%;
+	font-size: 30px;
+	text-align: center;
+}
+.rjx_student_main tr td{
+	text-align: center;
+	font-size: 24px;
+	line-height: 50px;
+}
+.rjx_student_main tr td button{
+	width: 60px;
+	height: 30px;
+	font-size: 18px;
+	line-height: 25px;
+}
+.rjx_student_main tr:nth-child(1):hover{
+	background: aqua;
+}
+.rjx_student_main tr:hover{
+	background: rgba(255,255,255,.7);
+}

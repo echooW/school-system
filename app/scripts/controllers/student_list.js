@@ -10,5 +10,5 @@
 angular.module('schoolSystemApp')
   .controller('student_listCtrl',['$scope',function ($scope) {
 		$scope.aa="8765";
-
+		
   }])
