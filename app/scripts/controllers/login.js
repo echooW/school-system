@@ -32,18 +32,21 @@ angular.module('schoolSystemApp').controller('loginCtrl',['$scope','$http','$sta
 //			  content: '内容'
 //			});
 			$('.teacher').bind('click',function(){
-				$('.lxm_main').css('opacity','1')
-				$('.lxm_main').css('z-index','2')
+//				$('.lxm_main').css('opacity','1')
+//				$('.lxm_main').css('z-index','2')
+				$('.lxm_login_wrapper').css('transform','translateX(4%)')
 			})
 			
 			$('.student').bind('click',function(){
-				$('.lxm_main').css('opacity','1')
-				$('.lxm_main').css('z-index','2')
+//				$('.lxm_main').css('opacity','1')
+//				$('.lxm_main').css('z-index','2')
+				$('.lxm_login_wrapper').css('transform','translateX(4%)')
 			})
 			
 			$('.lxm_main_cen p i').bind('click',function(){
-				$('.lxm_main').css('z-index','-2')
-				$('.lxm_main').css('opacity','0')
+//				$('.lxm_main').css('z-index','-2')
+//				$('.lxm_main').css('opacity','0')
+				$('.lxm_login_wrapper').css('transform','translateX(-34%)')
 			})
 			
 			function nice(name){
@@ -88,7 +91,7 @@ angular.module('schoolSystemApp').controller('loginCtrl',['$scope','$http','$sta
 							$('.lxm_pass').val('')
 							$('.yzm').val('')
 						},500)
-						$('.lxm_main_wrapper').css('transform','translate(-50%,-50%) rotateY(180deg)')
+						$('.lxm_main_wrapper').css('transform','rotateY(180deg)')
 						setTimeout(function(){
 							//success
 //							$('.lxm_main_back').css('background','#8BC34A')
@@ -111,9 +114,6 @@ angular.module('schoolSystemApp').controller('loginCtrl',['$scope','$http','$sta
 				$('.lxm_main_wrapper').css('transform','translate(-50%,-50%) rotateY(0)')
 			})
 			
-//			$('lxm_login_input').bind('input', function() { 
-//				alert(1)
-//			});
 		}
 	}	
 	
