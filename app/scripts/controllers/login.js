@@ -99,6 +99,13 @@ angular.module('schoolSystemApp').controller('loginCtrl',['$scope','$http','$sta
 						layer.msg('验证码输入错误');
 //						layer.alert('验证码输入错误',{title:'提示'});
 					}else{
+						var doger_pass;
+						if($('.lxm_pass').val() == '000000'){
+							doger_pass = $('.lxm_pass').val()
+						}else{
+							doger_pass = MD5($('.lxm_pass').val())
+						}
+//						console.log(doger_pass)
 //						console.log($('.lxm_user').val())
 //						console.log($('.lxm_pass').val())
 						$('.lxm_main_wrapper').css('transform','rotateY(180deg)')
@@ -113,12 +120,13 @@ angular.module('schoolSystemApp').controller('loginCtrl',['$scope','$http','$sta
 							async:false,
 							data:{
 								username:$('.lxm_user').val(),
-								password:$('.lxm_pass').val()
+								password:doger_pass
 							},
 							success:function(e){
 								console.log(e)
 								if(e.result){
 									sessionStorage.id = e.result[0].id
+									sessionStorage.pass = e.result[0].password
 								}
 								if(e.flag ==1){
 									setTimeout(function(){
