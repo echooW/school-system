@@ -36,6 +36,6 @@ angular
 					}
 			})
 			
-			$urlRouterProvider.when("", "/student_index");
+			$urlRouterProvider.when("", "/login");
 			
   }])

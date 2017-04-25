@@ -262,6 +262,8 @@
 	left: 0;
 	background: rgba(0,0,0,.5);
 	z-index: 99;
+	/*opacity: 0;
+	z-index: -1;*/
 	display: none;
 }
 
@@ -597,7 +599,65 @@
  
 
 /*修改密码*/
+
+.lxm_modify_password_wrapper {
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.5);
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+	display: none;
+}
+
 .lxm_modify_password {
 	width: 30%;
-	background: red;
+	height: 280px;
+	background: orange;
+	box-shadow: -10px 5px 10px 0 rgba(0,0,0,0.5);
+	border-radius: 10px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	padding-top: 50px;
+	transform: translate(-50%,-50%);
+}
+
+.lxm_modify_password span:nth-child(3) {
+	margin-left: 50%;
+	margin-top: 10px;
+	transform: translateX(-50%);
+}
+
+.lxm_student_erro_three {
+	position: absolute;
+	top: 3%;
+	right: 3%;
+	color: black;
+	font-size: 16px;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	border-radius: 50%;
+	opacity: .7;
+	cursor: pointer;
+	transition: all 1s;
+}
+
+/*improtant*/
+
+.lxm_important_a {
+	display: none;
+}
+
+.lxm_important_b {
+	display: block;
+}
+
+/*学生规范*/
+
+.lxm_student_rule {
+	
 }
