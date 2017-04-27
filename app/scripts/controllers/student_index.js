@@ -28,7 +28,7 @@ angular.module('schoolSystemApp')
 				url: ''+ip+'search/people',
 				async:false,
 				data:{
-					id:1
+					id:sessionStorage.id
 				},
 				success:function(e){
 					if(e){
@@ -66,6 +66,12 @@ angular.module('schoolSystemApp')
 			})
 			$(".lxm_student_erro_one").bind('click',function(){
 				$('.lxm_student_more').css('display','none')
+			})
+			$(".lxm_student_erro_two").bind('click',function(){
+				$('.lxm_student_rule').css('display','none')
+			})
+			$(".lxm_student_rule_btn").bind('click',function(){
+				$('.lxm_student_rule').css('display','block')
 			})
 			
 			$('.lxm_look_all').bind('click',function(){
