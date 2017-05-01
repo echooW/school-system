@@ -187,23 +187,31 @@ angular.module('schoolSystemApp')
 			$('body').delegate('.rjx_del','click',function(){
 				var id = $(this).attr('index')
 				var index = $(this).index('.rjx_del')
+//				alert(1)
+				layer.confirm('是否删除该学生信息？', {
+				  btn: ['确定','取消'] //按钮
+				}, function(){
+					$.ajax({
+						type:"get",
+						url:"http://192.168.43.204:8888/edit/del",
+						async:true,
+						data:{
+							'id':id
+						},
+						success:function(e){
+							console.log(e)
+							layer.msg('删除成功');
+							setTimeout(function(){
+								location.reload()
+							},1000)
+						}
+					})
+				}, function(){
+				  	layer.msg('已经取消');
+				});
 //				alert(index)
 //				$(this).parent().parent().remove()
-				$.ajax({
-					type:"get",
-					url:"http://192.168.43.204:8888/edit/del",
-					async:true,
-					data:{
-						'id':id
-					},
-					success:function(e){
-						console.log(e)
-						layer.msg('删除成功');
-						setTimeout(function(){
-							location.reload()
-						},1000)
-					}
-				})
+//				
 			})
 		}
 	}	
