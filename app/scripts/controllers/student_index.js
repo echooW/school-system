@@ -31,11 +31,34 @@ angular.module('schoolSystemApp')
 					id:sessionStorage.id
 				},
 				success:function(e){
+//					var aa = 0		
+					console.log(e)
 					if(e){
 						$('.lxm_msg p:nth-child(1) span').text(e[0].xinming)
 						$('.lxm_msg p:nth-child(2) span').text(e[0].sex)
 						$('.lxm_msg p:nth-child(3) span').text(e[0].tel)
 						$('.lxm_msg p:nth-child(4) span').text(e[0].banji)
+						
+						//首次提示守则
+						
+						if(e[0].state == 0){
+//							alert(1)
+							$('.lxm_student_rule').css('display','block')  
+							$.ajax({
+								type:'post',
+								url: ''+ip+'search/state',
+								async:false,
+								data:{
+									id:sessionStorage.id
+								},
+								success:function(e){
+									
+								}
+							})
+						}else if(e[0].state == 1){
+//							alert(2)
+							$('.lxm_student_rule').css('display','none')
+						}
 					}
 				}
 			})
