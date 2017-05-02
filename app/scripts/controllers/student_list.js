@@ -8,20 +8,80 @@
  * Controller of the trainingProjectsApp
  */
 angular.module('schoolSystemApp')
-	.controller('student_listCtrl', ['$scope', function($scope) {
-		//		$scope.aa="8765";
-
-	}]).directive("rjxStudentlist", function($http) {
-		return {
-			restrict: "ECMA",
-			link: function($scope, element, attr) {
-				var rjx_num = 0;
-				var rjx_leng = 0;
-				var rjx_length = 0;
-				var rjx_ye = 1;
-				var rjx_leng2 = 0;
-				var rjx_length2 = 0;
-
+  .controller('student_listCtrl',['$scope',function ($scope) {
+//		$scope.aa="8765";
+		
+  }]).directive("rjxStudentlist", function($http) {
+  	return {
+		restrict: "ECMA",
+		link: function($scope, element, attr) {
+			var rjx_num = 0;
+			var rjx_leng=0;
+			var rjx_length=0;
+			var rjx_ye = 1;
+			$.ajax({
+				type:"get",
+				url:"http://192.168.43.204:8888/page/page",
+				async:true,
+				data:{
+					start:0,
+					end:10
+				},
+				success:function(e){
+					rjx_leng = e[1]
+					var html='';
+					for(var i = 0;i<e[0].length;i++){
+						html+="<tr><td class='user'>"+e[0][i].xinming+"</td><td>"+e[0][i].banji+"</td><td>"+e[0][i].sex+"</td><td>"+e[0][i].tel+"</td><td><button>编辑</button><button class='rjx_del' index="+e[0][i].id+">删除</button></td></tr>"
+					}
+					$(".rjx_student_main_content").append(html)
+					rjx_length = Math.ceil(rjx_leng/10)
+					$(".rjx_fenye_main div span:nth-child(2)").html(rjx_length)
+				}
+			});
+			$(".rjx_top").attr("disabled","disabled")
+			$(".rjx_top").click(function(){
+				$(".rjx_bottom").removeAttr('disabled')
+				rjx_ye--;
+				if(rjx_ye==1){
+					$(".rjx_top").attr("disabled",true)
+				}
+				rjx_num-=10;
+				if(rjx_num<0){
+					rjx_num=0
+				}
+				$(".rjx_fenye_main div span:nth-child(1)").html(rjx_ye)
+				$.ajax({
+					type:"get",
+					url:"http://192.168.43.204:8888/page/page",
+					async:true,
+					data:{
+						start:rjx_num,
+						end:10
+					},
+					success:function(e){
+						$(".rjx_student_main_content").html('')
+						var html='';
+					for(var i = 0;i<e[0].length;i++){
+						html+="<tr><td class='user'>"+e[0][i].xinming+"</td><td>"+e[0][i].banji+"</td><td>"+e[0][i].sex+"</td><td>"+e[0][i].tel+"</td><td><button>编辑</button><button class='rjx_del' index="+e[0][i].id+">删除</button></td></tr>"
+					}
+					$(".rjx_student_main_content").append(html)
+					}
+				});
+			})
+			$(".rjx_bottom").click(function(){
+				$(".rjx_top").removeAttr('disabled')
+				rjx_ye++;
+				if(rjx_ye==rjx_length){
+					$(".rjx_bottom").attr('disabled','disabled')
+				}
+				$(".rjx_fenye_main div span:nth-child(1)").html(rjx_ye)
+				rjx_num+=10;
+				if(rjx_num>rjx_leng){
+					rjx_num=rjx_leng-(rjx_leng%10)
+				}else if(rjx_num == rjx_leng){
+					rjx_num=rjx_leng
+				}
+>>>>>>> origin/master
 				$.ajax({
 					type: "get",
 					url: '' + ip + 'page/page',
@@ -30,6 +90,7 @@ angular.module('schoolSystemApp')
 						start: 0,
 						end: 10
 					},
+<<<<<<< HEAD
 					success: function(e) {
 						console.log(e)
 						rjx_leng = e[1]
@@ -40,6 +101,15 @@ angular.module('schoolSystemApp')
 						$(".rjx_student_main_content").append(html)
 						rjx_length = Math.ceil(rjx_leng / 10)
 						$(".rjx_fenye_main div span:nth-child(2)").html(rjx_length)
+=======
+					success:function(e){
+						$(".rjx_student_main_content").html('')
+						var html='';
+					for(var i = 0;i<e[0].length;i++){
+						html+="<tr><td class='user'>"+e[0][i].xinming+"</td><td>"+e[0][i].banji+"</td><td>"+e[0][i].sex+"</td><td>"+e[0][i].tel+"</td><td><button>编辑</button><button class='rjx_del' index="+e[0][i].id+">删除</button></td></tr>"
+					}
+					$(".rjx_student_main_content").append(html)
+>>>>>>> origin/master
 					}
 				});
 //							1604A点击
@@ -337,5 +407,38 @@ angular.module('schoolSystemApp')
 					});
 				}
 			}
+			
+			
+			
+			//删除 
+			$('body').delegate('.rjx_del','click',function(){
+				var id = $(this).attr('index')
+				var index = $(this).index('.rjx_del')
+//				alert(1)
+				layer.confirm('是否删除该学生信息？', {
+				  btn: ['确定','取消'] //按钮
+				}, function(){
+					$.ajax({
+						type:"get",
+						url:"http://192.168.43.204:8888/edit/del",
+						async:true,
+						data:{
+							'id':id
+						},
+						success:function(e){
+							console.log(e)
+							layer.msg('删除成功');
+							setTimeout(function(){
+								location.reload()
+							},1000)
+						}
+					})
+				}, function(){
+				  	layer.msg('已经取消');
+				});
+//				alert(index)
+//				$(this).parent().parent().remove()
+//				
+			})
 		}
 	})
