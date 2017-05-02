@@ -16,13 +16,31 @@ angular.module('schoolSystemApp')
 		restrict: "ECMA",
 		link: function($scope, element, attr) {
 			var len;
+			var my_num = 0;
 //			$('.lxm_student_more').addClass('lxm_important_a')
 			
 			if(!sessionStorage.id){
 				$state.go("login");
 			}
 			
+			//扣分
+//			$.ajax({
+//				type:'get',
+//				url: ''+ip+'school/break',
+//				async:false,
+//				data:{
+//					uname:sessionStorage.name
+//				},
+//				success:function(e){
+////					console.log(e)
+//					for(var i = 0; i < e.length; i++){
+//						my_num += Number(e[i].fenshu) 
+//					}
+//					console.log(my_num)
+//				}
+//			})
 			
+			//获取当前登录人信息
 			$.ajax({
 				type:'get',
 				url: ''+ip+'search/people',
@@ -63,16 +81,19 @@ angular.module('schoolSystemApp')
 				}
 			})
 			
+			
+			
 			$.ajax({
 				type:"get",
-				url:''+ip+'page/page',
+				url:''+ip+'page/pageclass',
 				data:{
 					start:0,
-					end:7
+					end:7,
+					banji:sessionStorage.class
 				},
 				async:false,
 				success:function(e){
-//					console.log(e)
+					console.log(e)
 //					console.log(e[0][0].xinming)
 //					console.log(e[0].length)
 					len = e[1];
@@ -88,6 +109,7 @@ angular.module('schoolSystemApp')
 //				$('.lxm_my_erro').removeAttr("need_erro")
 			})
 			$(".lxm_student_erro_one").bind('click',function(){
+				my_num = 0;
 				$('.lxm_student_more').css('display','none')
 			})
 			$(".lxm_student_erro_two").bind('click',function(){
@@ -107,10 +129,26 @@ angular.module('schoolSystemApp')
 						id:sessionStorage.id
 					},
 					success:function(e){
-						
-						console.log(e)
+						$.ajax({
+							type:'get',
+							url: ''+ip+'school/break',
+							async:false,
+							data:{
+								uname:sessionStorage.name
+							},
+							success:function(e){
+			//					console.log(e)
+								for(var i = 0; i < e.length; i++){
+									my_num += Number(e[i].fenshu) 
+								}
+								console.log(my_num)
+								$('.my_achievement').text(100-my_num) //综合分数
+//								console.log(100-my_num)
+							}
+						})
+//						console.log(e)
 						if(e){
-							
+
 							$(".lxm_my_erro").attr('need_erro',e[0].xinming)
 							
 							$('.lxm_more_mes ul:nth-child(1) li:nth-child(1) span').text(e[0].xinming) //姓名
@@ -160,8 +198,11 @@ angular.module('schoolSystemApp')
 			})
 			
 			$("body").delegate('.lxm_table tr','click',function(){
-				$('.lxm_student_more').css('display','block')
 				
+				var my_need_name = $(this).children('td:nth-child(1)').text();
+				
+				$('.lxm_student_more').css('display','block')
+//				console.log()
 				$('.lxm_more_mes ul:nth-child(1) li:nth-child(1) span').text($(this).children('td:nth-child(1)').text()) //姓名
 				$('.lxm_more_mes ul:nth-child(1) li:nth-child(2) span').text($(this).children('td:nth-child(3)').text()) //性别
 				$('.lxm_more_mes ul:nth-child(1) li:nth-child(3) span').text($(this).children('td:nth-child(5)').text()) //宿舍号
@@ -177,7 +218,7 @@ angular.module('schoolSystemApp')
 						id:need
 					},
 					success:function(e){
-						console.log(e)
+//						console.log(e)
 						if(e){
 							$('.lxm_more_mes ul:nth-child(1) li:nth-child(4) span').text(e[0].year) //出生年月
 							$('.lxm_more_mes ul:nth-child(2) li:nth-child(1) span').text(e[0].parents) //父母
@@ -187,8 +228,25 @@ angular.module('schoolSystemApp')
 							$('.lxm_more_mes ul:nth-child(3) li:nth-child(3) span').text(e[0].bzrtel) //班主任电话
 							$('.lxm_map span').text(e[0].address) //家庭地址
 							$('.lxm_more_mes ul:nth-child(5) li:nth-child(1) span').text(e[0].stage) //实训阶段
+
 						}
 					}	
+				})
+				$.ajax({
+					type:'get',
+					url: ''+ip+'school/break',
+					async:false,
+					data:{
+						uname:my_need_name
+					},
+					success:function(e){
+	//					console.log(e)
+						for(var i = 0; i < e.length; i++){
+							my_num += Number(e[i].fenshu) 
+						}
+						$('.my_achievement').text(100-my_num) //综合分数
+//						console.log(my_num)
+					}
 				})
 //				console.log()
 //				alert(1)
