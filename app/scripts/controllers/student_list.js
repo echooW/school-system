@@ -211,8 +211,28 @@ angular.module('schoolSystemApp')
 				});
 //				alert(index)
 //				$(this).parent().parent().remove()
-//				
 			})
+			
+			
+//			$.ajax({
+//				type:"get",
+//				url:"http://192.168.43.204:8888/page/page",
+//				async:true,
+//				data:{
+//					start:0,
+//					end:10
+//				},
+//				success:function(e){
+//					rjx_leng = e[1]
+//					var html='';
+//					for(var i = 0;i<e[0].length;i++){
+//						html+="<tr><td class='user'>"+e[0][i].xinming+"</td><td>"+e[0][i].banji+"</td><td>"+e[0][i].sex+"</td><td>"+e[0][i].tel+"</td><td><button>编辑</button><button class='rjx_del' index="+e[0][i].id+">删除</button></td></tr>"
+//					}
+//					$(".rjx_student_main_content").append(html)
+//					rjx_length = Math.ceil(rjx_leng/10)
+//					$(".rjx_fenye_main div span:nth-child(2)").html(rjx_length)
+//				}
+//			});
 		}
 	}	
   })
