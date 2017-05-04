@@ -146,11 +146,11 @@
 
 .lxm_right_top {
 	width: 100%;
-	height: 60px;
+	height: 9%;
 	/*background: red;*/
 	/*color: #000;*/
 	text-align: center;
-	line-height: 60px;
+	line-height: 450%;
 }
 
 .lxm_right_top p {
@@ -161,8 +161,7 @@
 
 .lxm_table thead th {
 	width: 20%;
-	height: 50px;
-	line-height: 50px !important;
+	line-height: 300% !important;
 	font-size: 20px;
 	color: white;
 	background: rgba(0, 0, 0, .5);
@@ -178,8 +177,8 @@
 }
 
 .lxm_table td {
-	height: 40px;
-	line-height: 40px !important;
+	height: 18%;
+	line-height: 266% !important;
 	font-size: 18px;
 	/*background: #;*/
 }
@@ -678,8 +677,19 @@
 	border-radius: 10px;
 	transform: translate(-50%,-50%);
 }
+.lxm_student_rule_con_wra{
+	width: 50%;
+	height: 460px;
+	padding: 2px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+}
 
-.lxm_student_rule_con p {
+.lxm_student_rule_con_wra p {
 	font-family: "microsoft yahei";
 	text-align: center;
 	font-size: 20px;
@@ -687,7 +697,7 @@
 	/*position: relative;*/
 }
 
-.lxm_student_rule_con p:nth-child(1) {
+.lxm_student_rule_con_wra p:nth-child(1) {
 	font-size: 25px;
 }
 

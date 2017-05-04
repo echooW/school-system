@@ -28,7 +28,7 @@ angular
 			})
 		
 			$stateProvider.state("teacher_index.student_list",{
-					url:"/student_list",
+					url:"/student_list?id",
 					views:{
 						content:{
 							templateUrl:"views/student_list.html"

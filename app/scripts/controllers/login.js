@@ -129,6 +129,9 @@ angular.module('schoolSystemApp').controller('loginCtrl',['$scope','$http','$sta
 									sessionStorage.pass = e.result[0].password
 									sessionStorage.class = e.result[0].banji
 									sessionStorage.name = e.result[0].xinming
+									sessionStorage.teacherName = e.result[0].xingming
+									sessionStorage.classes = e.result[0].class;
+									sessionStorage.teacherTel = e.result[0].tel
 								}
 								if(e.flag ==1){
 									setTimeout(function(){
