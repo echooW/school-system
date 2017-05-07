@@ -7,12 +7,12 @@
 }
 
 .lxm_index_wrapper {
-	width: 80%;
-	height: 85%;
+	width: 1160px;
+	height: 580px;
 	background: rgba(255, 255, 255, .7);
 	position: absolute;
-	top: 7.5%;
-	left: 10%;
+	top: calc(50% - 290px);
+	left: calc(50% - 580px);
 }
 
 .lxm_index_wrapper_left {
@@ -146,11 +146,11 @@
 
 .lxm_right_top {
 	width: 100%;
-	height: 9%;
+	height: 56px;
 	/*background: red;*/
 	/*color: #000;*/
 	text-align: center;
-	line-height: 450%;
+	line-height: 56px;
 }
 
 .lxm_right_top p {
@@ -161,7 +161,7 @@
 
 .lxm_table thead th {
 	width: 20%;
-	line-height: 300% !important;
+	line-height: 46px !important;
 	font-size: 20px;
 	color: white;
 	background: rgba(0, 0, 0, .5);
@@ -177,8 +177,8 @@
 }
 
 .lxm_table td {
-	height: 18%;
-	line-height: 266% !important;
+	height: 40px;
+	line-height: 40px !important;
 	font-size: 18px;
 	/*background: #;*/
 }

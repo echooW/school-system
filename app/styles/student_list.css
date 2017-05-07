@@ -9,10 +9,10 @@
 }
 .rjx_student_header{
 	width: 100%;
-	height: 9%;
+	height: 56px;
 	text-align: center;
 	font-size: 24px;
-	line-height: 250%;
+	line-height: 56px;
 	letter-spacing: 5px;
 }
 .rjx_student_main{
@@ -20,7 +20,7 @@
 	height: 80%;
 }
 .rjx_student_main_header{
-	line-height: 560%;
+	line-height: 60px;
 	background: rgba(0,0,0,.2);
 }
 .rjx_student_main_header th{
@@ -37,7 +37,7 @@
 .rjx_student_main_content tr td{
 	text-align: center;
 	font-size: 18px;
-	line-height: 360%;
+	line-height: 55px;
 }
 .rjx_student_main_content tr td button{
 	width: 60px;
@@ -66,7 +66,7 @@
 
 
 .rjx_more_con {
-	width: 70%;
+	width: 80%;
 	height: 80%;
 	border-radius: 10px;
 	box-shadow: -10px 5px 10px 0 rgba(0,0,0,0.5);
@@ -76,20 +76,19 @@
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%,-50%);
+	padding: 3% 5% 3%;
 }
 
 .rjx_more_mes {
 	width: 90%;
-	height: 280px;
+	height: 230px;
 	/*background: red;*/
-	margin-left: 5%;
-	margin-top: 5%;
 	position: relative;
 }
 
 .rjx_more_achievement {
 	width: 65%;
-	height: 200px;
+	height: 160px;
 	/*background: orange;*/
 	margin-left: 5%;
 }
@@ -131,7 +130,7 @@
 
 .rjx_more_mes ul:nth-child(2) li {
 	float: left;
-	line-height: 50px;
+	line-height: 40px;
 	/*background: blue;*/
 }
 
@@ -186,7 +185,7 @@
 
 .rjx_map {
 	font-size: 18px;
-	line-height: 40px;
+	line-height: 30px;
 	text-indent: 1.2em;
 }
 
@@ -200,9 +199,11 @@
 
 .rjx_more_mes ul:nth-child(5) li {
 	/*float: left;*/
+	width: 30%;
 	line-height: 40px;
 	text-indent: 1.2em;
 	font-weight: bold;
+	float: left;
 	/*background: blue;*/
 }
 
@@ -263,7 +264,7 @@
 	width: 25%;
 	text-align: center;
 	font-size: 18px;
-	line-height: 69px;
+	line-height: 45px;
 	border-right: 1px #000 solid;
 	/*font-family: "microsoft yahei";*/
 }
@@ -284,12 +285,12 @@
 }
 .rjx_more_elit_mes ul:nth-child(1){
  	width: 100%;
- 	height: 50px;
+ 	height: 36px;
  	margin-top: 50px;
  }
  .rjx_more_elit_mes ul:nth-child(1) li{
  	width: 25%;
- 	height: 50px;
+ 	height: 36px;
  	float: left;
  	padding-top: 10px;
  }
@@ -315,26 +316,26 @@
  }
  .rjx_more_elit_mes ul:nth-child(1) li span{
  	width: 60px;
- 	height: 50px;
+ 	height: 36px;
  	float: left;
  	font-size: 18px;
  	display: block;
  }
  .rjx_more_elit_mes ul:nth-child(1) li:nth-child(3) span{
  	width: 70px;
- 	height: 50px;
+ 	height: 36px;
  	float: left;
  	display: block;
  }
  .rjx_more_elit_mes ul:nth-child(1) li:nth-child(4) span{
  	width: 100px;
- 	height: 50px;
+ 	height: 36px;
  	float: left;
  	display: block;
  }
  .rjx_more_elit_mes ul:nth-child(2){
  	width: 100%;
- 	height: 40px;
+ 	height: 36px;
  	margin-top: 5px;
  }
  .rjx_more_elit_mes ul:nth-child(2) li{
@@ -358,7 +359,7 @@
  }
  .rjx_more_elit_mes ul:nth-child(2) li span{
  	width: 100px;
- 	height: 40px;
+ 	height: 36px;
  	float: left;
  	font-size: 18px;
  	display: block;
@@ -374,13 +375,12 @@
  }
  .rjx_more_elit_mes ul:nth-child(3){
  	width: 100%;
- 	height: 40px;
+ 	height: 36px;
  	margin-top: 5px;
- 	
  }
  .rjx_more_elit_mes ul:nth-child(3) li{
  	width: 30%;
- 	height: 40px;
+ 	height: 36px;
  	float: left;
  	padding-top: 5px;
  	font-size: 18px;
@@ -393,7 +393,6 @@
  	width: 28%;
  }
  .rjx_more_elit_mes ul:nth-child(3) li:nth-child(1) input{
- 	
  	width: 100px;
  }
  .rjx_more_elit_mes ul:nth-child(3) li:nth-child(2) input{
@@ -407,7 +406,7 @@
  }
  .rjx_elit_map{
  	width: 500px;
- 	height: 40px;
+ 	height: 36px;
  	padding-top: 5px;
  	margin-left: 50px;
  	font-size: 18px;
@@ -424,27 +423,27 @@
  }
 .rjx_more_elit_mes ul:nth-child(5){
  	width: 100%;
- 	height: 80px;
- 	margin-top: 10px;
+ 	height: 50px;
+ 	margin-top: 10px;float: left;
  }
  .rjx_more_elit_mes ul:nth-child(5) li{
  	width: 100%;
  	font-size: 20px;
- 	font-weight: bold;
+ 	font-weight: bold;float: left;
  }
  .rjx_more_elit_mes ul:nth-child(5) li input{
  	border: 0;
  	color: red;
+ 	width: 130px;
  }
  .rjx_more_elit_mes ul:nth-child(5) li:nth-child(1){
- 	width: 100%;
+ 	width: 36%;
  }
  .rjx_more_elit_mes ul:nth-child(5) li:nth-child(1) span{
  	margin-left: 50px;
  }
  .rjx_more_elit_mes ul:nth-child(5) li:nth-child(2){
- 	width: 100%;
- 	margin-top: 20px;
+ 	width: 36%;
  }
  .rjx_more_elit_mes ul:nth-child(5) li:nth-child(2) span{
  	margin-left: 50px;
@@ -455,11 +454,13 @@
 	right: 7%;
 }
 .rjx_a_more_achievement p:nth-child(1) {
+	width: 62%;
 	font-size: 20px;
 	text-align: center;
 	line-height: 60px;
 	letter-spacing: 3px;
 	font-weight: bold;
+	margin-left: 5%;
 }
 
 .rjx_a_detailed {

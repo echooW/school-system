@@ -37,6 +37,7 @@ angular.module('schoolSystemApp').controller('loginCtrl',['$scope','$http','$sta
 //				$('.lxm_main').css('opacity','1')
 //				$('.lxm_main').css('z-index','2')
 				$('.lxm_sub').addClass('lxm_teacher_clk')
+				doger_click('.lxm_teacher_clk',''+ip+'login/teachers','teacher_index')
 				$('.lxm_login_wrapper').css('transform','translateX(4%)')
 			})
 			
@@ -44,6 +45,7 @@ angular.module('schoolSystemApp').controller('loginCtrl',['$scope','$http','$sta
 //				$('.lxm_main').css('opacity','1')
 //				$('.lxm_main').css('z-index','2')
 				$('.lxm_sub').addClass('lxm_student_clk')
+				doger_click('.lxm_student_clk',''+ip+'login/students','student_index')
 				$('.lxm_login_wrapper').css('transform','translateX(4%)')
 			})
 			
@@ -78,10 +80,10 @@ angular.module('schoolSystemApp').controller('loginCtrl',['$scope','$http','$sta
 			
 			
 //			console.log(ip)
-			doger_click('.lxm_teacher_clk',''+ip+'login/teachers','teacher_index')
-			doger_click('.lxm_student_clk',''+ip+'login/students','student_index')
+//			doger_click('.lxm_teacher_clk',''+ip+'login/teachers','teacher_index')
+//			doger_click('.lxm_student_clk',''+ip+'login/students','student_index')
 			function doger_click(myclass,myurl,html){
-			$('body').delegate(myclass,'click',function(){	
+			$(myclass).click(function(){	
 //			$(myclass).bind('click',function(){
 //				alert(1)
 				var res = verifyCode.validate($('.yzm').val());
