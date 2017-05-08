@@ -24,9 +24,9 @@
 
 .lxm_login_wrapper {
 	width: 1366px;
-	margin-left: 5%;
+	margin-left: 50%;
 	position: relative;
-	transform: translateX(-34%);
+	transform: translateX(-50%);
 	transition: 1s;
 }
 

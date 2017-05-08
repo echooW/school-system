@@ -38,7 +38,7 @@ angular.module('schoolSystemApp').controller('loginCtrl',['$scope','$http','$sta
 //				$('.lxm_main').css('z-index','2')
 				$('.lxm_sub').addClass('lxm_teacher_clk')
 				doger_click('.lxm_teacher_clk',''+ip+'login/teachers','teacher_index')
-				$('.lxm_login_wrapper').css('transform','translateX(4%)')
+				$('.lxm_login_wrapper').css('transform','translateX(-13%)')
 			})
 			
 			$('.student').bind('click',function(){
@@ -46,14 +46,14 @@ angular.module('schoolSystemApp').controller('loginCtrl',['$scope','$http','$sta
 //				$('.lxm_main').css('z-index','2')
 				$('.lxm_sub').addClass('lxm_student_clk')
 				doger_click('.lxm_student_clk',''+ip+'login/students','student_index')
-				$('.lxm_login_wrapper').css('transform','translateX(4%)')
+				$('.lxm_login_wrapper').css('transform','translateX(-13%)')
 			})
 			
 			$('.lxm_main_cen p i').bind('click',function(){
 //				$('.lxm_main').css('z-index','-2')
 //				$('.lxm_main').css('opacity','0')
 				$('.lxm_sub').removeClass('lxm_student_clk lxm_teacher_clk')
-				$('.lxm_login_wrapper').css('transform','translateX(-34%)')
+				$('.lxm_login_wrapper').css('transform','translateX(-50%)')
 			})
 			
 			function nice(name){
